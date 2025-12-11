@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 export default function HomePage() {
 
@@ -25,17 +26,22 @@ export default function HomePage() {
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
                     {
                         movies.map(el => (
-                            <div className="col g-3">
-                                <div className="card">
-                                    <div div className="card-header" >
-                                        <img src={`http://localhost:3000/${el.image}`} alt="a film ver image" />
+                            <div key={el.id} className="col g-3">
+                                <Link to={`/${el.id}`}>
+
+                                    <div className="card">
+
+                                        <div className="card-header" >
+                                            <img src={`http://localhost:3000/${el.image}`} alt="a film ver image" />
+                                        </div>
+                                        <div className="card-body">
+                                            <h4>{el.title}</h4>
+                                            <p>{el.genre}</p>
+                                            <p>{el.abstract}</p>
+                                        </div>
                                     </div>
-                                    <div className="card-body">
-                                        <h4>{el.title}</h4>
-                                        <p>{el.genre}</p>
-                                        <p>{el.abstract}</p>
-                                    </div>
-                                </div>
+                                </Link>
+
                             </div>
                         ))
                     }
