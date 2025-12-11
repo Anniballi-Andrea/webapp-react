@@ -1,8 +1,16 @@
 @import url('bootstrap');
 @import url('bootstrap-icons');
 
+header {
+    .navbar {
+        min-height: 80px !important;
+    }
+
+}
+
 main {
     min-height: 100vh;
+    padding-bottom: 2rem;
 }
 
 .card {
@@ -17,5 +25,20 @@ main {
 
     .card-body {
         min-height: 200px;
+    }
+}
+
+footer {
+    margin-top: 1rem;
+    background-color: black;
+    min-height: 80px !important;
+
+    h5 {
+        color: white;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
     }
 }

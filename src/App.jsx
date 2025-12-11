@@ -14,6 +14,7 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/About_Us" element={<About_Us />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
