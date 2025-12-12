@@ -17,9 +17,7 @@ export default function Movies() {
             })
             .catch((err) => {
                 console.log(err.message)
-                if (err) {
-                    <Link to={"/"} />
-                }
+
             })
 
     }
