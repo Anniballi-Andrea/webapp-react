@@ -28,6 +28,11 @@ main {
     }
 }
 
+.no_link {
+    text-decoration: none;
+    color: black;
+}
+
 footer {
     margin-top: 1rem;
     background-color: black;

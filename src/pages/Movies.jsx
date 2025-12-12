@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
 
-export default function HomePage() {
+export default function Movies() {
 
     const [movies, setMovies] = useState([])
 
@@ -27,7 +27,7 @@ export default function HomePage() {
                     {
                         movies.map(el => (
                             <div key={el.id} className="col g-3">
-                                <Link to={`/${el.id}`}>
+                                <Link className="no_link" to={`/${el.id}`}>
 
                                     <div className="card">
 
