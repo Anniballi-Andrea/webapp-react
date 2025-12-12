@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import PageNotFound from "./PageNotFound";
+import MovieCard from "../components/MovieCard";
 
 export default function Movie() {
 
@@ -86,69 +87,9 @@ export default function Movie() {
 
                 <div className="row ">
                     {notFound && <PageNotFound />}
-                    {movie &&
-
-                        <>
-
-                            <div className="col col-md-4">
-                                <img src={`http://localhost:3000/${movie.image}`} alt="" />
-                            </div>
-                            <div className="col col-md-8">
-                                <div className="card">
-                                    <div className="card-header"><h3> {movie.title}</h3></div>
-                                    <div className="card-body">
-                                        <ul>
-                                            <li>
-                                                <span className="bold">Genre: </span>{movie.title}
-                                            </li>
-                                            <li>
-                                                <span className="bold">Release year: </span>{movie.release_year}
-                                            </li>
-                                            <li>
-                                                <span className="bold">Director: </span>{movie.director}
-                                            </li>
-                                            <li>
-                                                <span className="bold">description: </span>{movie.abstract}
-                                            </li>
-                                            <div className="d-flex justify-content-end px-5 ">
-                                                {
-                                                    numberToStars(vote)
-                                                }
-                                            </div>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="card mt-3">
-                                    <div className="card-header">
-                                        <h3>Reviews</h3>
-                                    </div>
-                                    {
-
-                                        movie.review.map((el) => (
-                                            <div key={el.review_id} className="my-2 px-3 pt-3">
-                                                <div>
-                                                    <span className="bold">Name: </span>{el.name}
-                                                </div>
-                                                <div>
-                                                    <span className="bold">Review: </span>{el.review}
-                                                </div>
-                                                <div className="d-flex justify-content-end px-5">
-
-                                                    <span className="">
-                                                        {
-                                                            numberToStars(el.vote)
-                                                        }
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
+                    {movie && <MovieCard movie={movie} numberToStars={numberToStars} vote={vote} />
 
 
-                            </div>
-
-                        </>
 
                     }
 

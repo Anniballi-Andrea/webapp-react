@@ -18,7 +18,7 @@ main {
     .card-header {
         img {
             width: 100%;
-            max-height: 350px;
+            max-height: 400px;
             object-fit: cover;
         }
     }
@@ -26,7 +26,15 @@ main {
     .card-body {
         min-height: 200px;
     }
+
+
 }
+
+.shadowed:hover {
+
+    box-shadow: 4px 4px 8px;
+}
+
 
 .no_link {
     text-decoration: none;
@@ -36,7 +44,7 @@ main {
 .movie {
     img {
         width: 100%;
-        max-height: 500px;
+        max-height: 600px;
         object-fit: cover;
     }
 
@@ -44,6 +52,20 @@ main {
 
         color: goldenrod;
     }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            margin: 1rem 0;
+
+        }
+    }
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 

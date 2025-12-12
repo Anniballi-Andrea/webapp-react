@@ -34,7 +34,7 @@ export default function Movies() {
                             <div key={el.id} className="col g-3">
                                 <Link className="no_link" to={`/movies/${el.id}`}>
 
-                                    <div className="card">
+                                    <div className="card shadowed">
 
                                         <div className="card-header" >
                                             <img src={`http://localhost:3000/${el.image}`} alt="a film ver image" />
