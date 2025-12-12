@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import PageNotFound from "./PageNotFound";
 
 export default function Movie() {
 
     const [movie, setMovie] = useState()
     const [vote, setVote] = useState()
+    const [notFound, setNotFound] = useState(false)
     const { id } = useParams()
     function fatchMovie() {
 
@@ -15,7 +17,12 @@ export default function Movie() {
                 //console.log(res.data)
                 //console.log(res.data.review)
             })
-            .catch((err) => console.log(err.message))
+            .catch((err) => {
+                console.log(err.message)
+                if (err) {
+                    setNotFound(true)
+                }
+            })
 
     }
 
@@ -76,10 +83,13 @@ export default function Movie() {
 
         <main>
             <div className="container movie mt-5">
+
                 <div className="row ">
+                    {notFound && <PageNotFound />}
                     {movie &&
 
                         <>
+
                             <div className="col col-md-4">
                                 <img src={`http://localhost:3000/${movie.image}`} alt="" />
                             </div>
