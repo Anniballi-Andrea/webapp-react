@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { Link } from "react-router-dom"
+import { Link, } from "react-router-dom"
+
 
 export default function Movies() {
 
     const [movies, setMovies] = useState([])
+
 
     function fatchMovies() {
 
@@ -13,7 +15,12 @@ export default function Movies() {
                 setMovies(res.data)
 
             })
-            .catch((err) => console.log(err.message))
+            .catch((err) => {
+                console.log(err.message)
+                if (err) {
+                    <Link to={"/"} />
+                }
+            })
 
     }
 
@@ -27,7 +34,7 @@ export default function Movies() {
                     {
                         movies.map(el => (
                             <div key={el.id} className="col g-3">
-                                <Link className="no_link" to={`/${el.id}`}>
+                                <Link className="no_link" to={`/movies/${el.id}`}>
 
                                     <div className="card">
 
