@@ -17,10 +17,12 @@ export default function MovieInfo({ movie, numberToStars, vote }) {
                     <li>
                         <span className="bold">description: </span>{movie.abstract}
                     </li>
-                    <div className="d-flex justify-content-end px-5 ">
-                        {
-                            numberToStars(vote)
-                        }
+                    <div className="d-flex justify-content-start align-items-center  ">
+                        <span className="bold">{`vote:`}</span>
+                        <span>
+                            {
+                                numberToStars(vote)
+                            }</span>
                     </div>
                 </ul>
             </div>

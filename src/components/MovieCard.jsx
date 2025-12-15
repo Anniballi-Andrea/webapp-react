@@ -3,7 +3,7 @@ import MovieInfo from "./MovieInfo";
 import MovieReview from "./MovieReview";
 import ReviewForm from "./reviewForm";
 
-export default function MovieCard({ movie, numberToStars, vote, movieId }) {
+export default function MovieCard({ movie, numberToStars, vote, movieId, fatchMovie }) {
 
 
 
@@ -19,18 +19,21 @@ export default function MovieCard({ movie, numberToStars, vote, movieId }) {
                 </div>
                 <div className="card mt-3">
                     <div className="card-header">
-                        <h3>Reviews</h3>
+                        <h3>Leave your review</h3>
                     </div>
 
-                    <MovieReview movie={movie} numberToStars={numberToStars} />
+                    <ReviewForm movieId={movieId} fatchMovie={fatchMovie} />
                 </div>
 
 
             </div>
-            <div className="col-12">
-                <h3>Leave your review</h3>
-
-                <ReviewForm movieId={movieId} />
+            <div className="col-12 mt-5">
+                <div className="card">
+                    <div className="card-header">
+                        <h3>Reviews</h3>
+                    </div>
+                    <MovieReview movie={movie} numberToStars={numberToStars} />
+                </div>
             </div>
 
         </>

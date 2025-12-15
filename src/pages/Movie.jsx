@@ -10,6 +10,7 @@ export default function Movie() {
     const [vote, setVote] = useState()
     const [notFound, setNotFound] = useState(false)
     const { id } = useParams()
+
     function fatchMovie() {
 
         axios.get(`http://localhost:3000/api/movies/${id}`)
@@ -88,7 +89,7 @@ export default function Movie() {
 
             <div className="row ">
                 {notFound && <PageNotFound />}
-                {movie && <MovieCard movie={movie} numberToStars={numberToStars} vote={vote} movieId={id} />
+                {movie && <MovieCard movie={movie} numberToStars={numberToStars} vote={vote} movieId={id} fatchMovie={fatchMovie} />
 
 
 
