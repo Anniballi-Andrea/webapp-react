@@ -26,33 +26,33 @@ export default function Movies() {
     // useEffect(() => console.log(movies), [movies])
 
     return (
-        <main>
-            <div className="container">
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
-                    {
-                        movies.map(el => (
-                            <div key={el.id} className="col g-3">
-                                <Link className="no_link" to={`/movies/${el.id}`}>
 
-                                    <div className="card shadowed">
+        <div className="container">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+                {
+                    movies.map(el => (
+                        <div key={el.id} className="col g-3">
+                            <Link className="no_link" to={`/movies/${el.id}`}>
 
-                                        <div className="card-header" >
-                                            <img src={`http://localhost:3000/${el.image}`} alt="a film ver image" />
-                                        </div>
-                                        <div className="card-body">
-                                            <h4>{el.title}</h4>
-                                            <p>{el.genre}</p>
-                                            <p>{el.abstract}</p>
-                                        </div>
+                                <div className="card shadowed card_height_550">
+
+                                    <div className="card-header" >
+                                        <img src={`http://localhost:3000/${el.image}`} alt="a film ver image" />
                                     </div>
-                                </Link>
+                                    <div className="card-body">
+                                        <h4>{el.title}</h4>
+                                        <p>{el.genre}</p>
+                                        <p>{el.abstract}</p>
+                                    </div>
+                                </div>
+                            </Link>
 
-                            </div>
-                        ))
-                    }
-                </div >
+                        </div>
+                    ))
+                }
             </div >
-        </main >
+        </div >
+
 
     )
 }

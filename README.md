@@ -1,11 +1,11 @@
 # fasi di lavoro
 - [x] installare react e tutte le altre dipendense
 - [x] ripulire tutto il lavoro dalla roba di default
-- [] creare un layout di default
-   - [] creare un componente per l'header
-   - [] creare un componente per il footer
-- [] creare il percorso per l'homepage
-- [] aggiungere una chiamata ajax per inserire i dati in pagiga
-    - [] abilitare la comunicazione con il server lato backend con cors
-- [] creare la pagina con i dettagli del singolo film
-- [] curare l'aspetto dell'applicazione
+- [x] creare un layout di default
+   - [x] creare un componente per l'header
+   - [x] creare un componente per il footer
+- [x] creare il percorso per l'homepage
+- [x] aggiungere una chiamata ajax per inserire i dati in pagiga
+    - [x] abilitare la comunicazione con il server lato backend con cors
+- [x] creare la pagina con i dettagli del singolo film
+- [x] curare l'aspetto dell'applicazione

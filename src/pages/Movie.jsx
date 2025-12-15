@@ -16,6 +16,7 @@ export default function Movie() {
             .then((res) => {
                 setMovie(res.data)
                 //console.log(res.data)
+                //console.log(res.data.id)
                 //console.log(res.data.review)
             })
             .catch((err) => {
@@ -82,20 +83,20 @@ export default function Movie() {
 
     return (
 
-        <main>
-            <div className="container movie mt-5">
 
-                <div className="row ">
-                    {notFound && <PageNotFound />}
-                    {movie && <MovieCard movie={movie} numberToStars={numberToStars} vote={vote} />
+        <div className="container movie mt-5">
+
+            <div className="row ">
+                {notFound && <PageNotFound />}
+                {movie && <MovieCard movie={movie} numberToStars={numberToStars} vote={vote} />
 
 
 
-                    }
+                }
 
-                </div>
             </div>
-        </main >
+        </div>
+
 
     )
 }
