@@ -3,7 +3,7 @@ import MovieInfo from "./MovieInfo";
 import MovieReview from "./MovieReview";
 import ReviewForm from "./reviewForm";
 
-export default function MovieCard({ movie, numberToStars, vote, }) {
+export default function MovieCard({ movie, numberToStars, vote, movieId }) {
 
 
 
@@ -30,7 +30,7 @@ export default function MovieCard({ movie, numberToStars, vote, }) {
             <div className="col-12">
                 <h3>Leave your review</h3>
 
-                <ReviewForm />
+                <ReviewForm movieId={movieId} />
             </div>
 
         </>

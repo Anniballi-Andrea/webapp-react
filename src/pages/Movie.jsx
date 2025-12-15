@@ -88,7 +88,7 @@ export default function Movie() {
 
             <div className="row ">
                 {notFound && <PageNotFound />}
-                {movie && <MovieCard movie={movie} numberToStars={numberToStars} vote={vote} />
+                {movie && <MovieCard movie={movie} numberToStars={numberToStars} vote={vote} movieId={id} />
 
 
 
