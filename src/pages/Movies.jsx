@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { Link, } from "react-router-dom"
+import { useGlobalProvider } from "../context/GlobalContext"
 
 
 export default function Movies() {
+    const { loader, setLoader } = useGlobalProvider()
 
     const [movies, setMovies] = useState([])
 
 
     function fatchMovies() {
-
+        setLoader(true)
+        //console.log(loader)
         axios.get('http://localhost:3000/api/movies')
             .then((res) => {
                 setMovies(res.data)
 
-            })
-            .catch((err) => {
+            }).catch((err) => {
                 console.log(err.message)
 
             })
+        //setLoader(false)
 
+        console.log(loader)
     }
 
     useEffect(fatchMovies, [])

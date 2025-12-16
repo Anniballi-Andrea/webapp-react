@@ -19,6 +19,7 @@ export default function Movie() {
                 //console.log(res.data)
                 //console.log(res.data.id)
                 //console.log(res.data.review)
+
             })
             .catch((err) => {
                 console.log(err.message)
